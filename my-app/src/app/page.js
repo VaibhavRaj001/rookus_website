@@ -2,7 +2,13 @@
 
 import { useState } from "react";
 import { ChevronDown, Search, Settings, User } from "lucide-react";
-import Navbar from "../components/ui/Navbar";
+import {
+  Navbar,
+  NavBody,
+  NavbarLogo,
+  NavItems,
+  NavbarButton,
+} from "../components/ui/Navbar";
 import Sponsors from "../components/ui/Sponsors";
 
 export default function Home() {
@@ -15,7 +21,22 @@ export default function Home() {
       </div>
 
       <div className="fixed top-0 left-0 w-full z-50">
-        <Navbar />
+        <Navbar>
+          <NavBody visible={true}>
+            <NavbarLogo />
+            <NavItems
+              items={[
+                { name: "Features", link: "/" },
+                { name: "Research", link: "/about" },
+                { name: "Pricing", link: "/" },
+                { name: "Blog", link: "/" },
+                { name: "Use Cases", link: "/" },
+                // Add more items as needed
+              ]}
+            />
+            <NavbarButton href="/">Join Waitlist</NavbarButton>
+          </NavBody>
+        </Navbar>
       </div>
 
       <div className="absolute inset-0 bg-black/10 z-0"></div>

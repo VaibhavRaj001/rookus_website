@@ -1,9 +1,9 @@
 // src/app/layout.jxs
-import "./globals.css";  // ✅ must be at the very top
+import "./globals.css"; 
 
 export const metadata = {
-  title: "My App",
-  description: "Next.js + Chakra UI App",
+  title: "Rookus",
+  description: "Next.js Application",
 };
 
 export default function RootLayout({ children }) {
