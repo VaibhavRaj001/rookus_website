@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, Search, Settings, User } from "lucide-react";
 import Navbar from "../components/ui/Navbar";
+import Sponsors from "../components/ui/Sponsors";
 
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
@@ -72,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* Bottom Card */}
-      <div className="relative z-10 w-11/12 mx-auto mt-16 mb-16">
+      <div className="relative z-10 w-11/12 mx-auto mt-16">
         {/* Gradient Glow */}
         <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-[#6D28D9] via-[#A855F7] to-[#6D28D9] blur-xl opacity-80 -z-10"></div>
 
@@ -299,6 +300,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <Sponsors />
     </main>
   );
 }
