@@ -8,11 +8,24 @@ import {
   NavbarLogo,
   NavItems,
   NavbarButton,
+  MobileNavMenu,
+  MobileNav,
+  MobileNavToggle,
+  MobileNavHeader,
 } from "../components/ui/Navbar";
 import Sponsors from "../components/ui/Sponsors";
 
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const navItems = [
+    { name: "Features", link: "/" },
+    { name: "Research", link: "/about" },
+    { name: "Pricing", link: "/" },
+    { name: "Blog", link: "/" },
+    { name: "Use Cases", link: "/" },
+  ];
   return (
     <main className="relative min-h-screen flex flex-col items-center text-white overflow-hidden bg-black pt-32">
       {/* Radial Purple Glow */}
@@ -22,20 +35,39 @@ export default function Home() {
 
       <div className="fixed top-0 left-0 w-full z-50">
         <Navbar>
-          <NavBody visible={true}>
+          {/* Desktop Navbar */}
+          <NavBody>
             <NavbarLogo />
-            <NavItems
-              items={[
-                { name: "Features", link: "/" },
-                { name: "Research", link: "/about" },
-                { name: "Pricing", link: "/" },
-                { name: "Blog", link: "/" },
-                { name: "Use Cases", link: "/" },
-                // Add more items as needed
-              ]}
-            />
+            <NavItems items={navItems} />
             <NavbarButton href="/">Join Waitlist</NavbarButton>
           </NavBody>
+          {/* Mobile Navbar */}
+          <MobileNav>
+            <MobileNavHeader>
+              <NavbarLogo />
+              <MobileNavToggle
+                isOpen={mobileOpen}
+                onClick={() => setMobileOpen((prev) => !prev)}
+              />
+            </MobileNavHeader>
+            <MobileNavMenu isOpen={mobileOpen}>
+              <div className="flex flex-col w-full">
+                {navItems.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href={item.link}
+                    className="px-4 py-2 text-gray-300 hover:text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ))}
+                <NavbarButton href="/" className="mt-4 w-full">
+                  Join Waitlist
+                </NavbarButton>
+              </div>
+            </MobileNavMenu>
+          </MobileNav>
         </Navbar>
       </div>
 
