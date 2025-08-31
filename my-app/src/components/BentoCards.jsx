@@ -1,7 +1,7 @@
 import React from "react";
 import { Database } from "lucide-react";
 
-const BentoCards = () => {
+export const BentoCards = () => {
   return (
     <section className="w-full bg-black text-white py-16 px-6 flex flex-col items-center relative z-20">
       <h2 className="text-2xl md:text-3xl font-semibold text-center max-w-2xl mx-auto mb-12">
@@ -50,4 +50,3 @@ const BentoCards = () => {
   );
 };
 
-export default BentoCards;

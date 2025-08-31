@@ -14,11 +14,12 @@ import {
   MobileNavHeader,
 } from "../components/ui/Navbar";
 import Sponsors from "../components/ui/Sponsors";
-import  BentoCards from "@/components/BentoCards";
+import { BentoCards } from "@/components/BentoCards";
 import Features from "@/components/Features";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
+import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
@@ -414,13 +415,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
       <Sponsors />
       <BentoCards />
       <Features />
-      <Testimonials/>
-      <Pricing/>
-      <CTA/>
-    </main>
+      <Testimonials />
+      <Pricing />
+      <CTA />
+      <Footer />
+    </>
   );
 }
