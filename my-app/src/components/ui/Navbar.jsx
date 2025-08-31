@@ -29,7 +29,7 @@ export const Navbar = ({ children, className }) => {
     <motion.div
       ref={ref}
       className={cn(
-        "sticky inset-x-0 top-0 z-40 w-full bg-black/80 backdrop-blur",
+        "sticky inset-x-0 top-0 z-40 w-full backdrop-blur",
         className
       )}
     >
