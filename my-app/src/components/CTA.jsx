@@ -1,100 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import Waitlist from "./waitlist";
 
 const CTA = () => {
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleJoinWaitlist = (e) => {
+    e.preventDefault();
+    setIsWaitlistOpen(true);
+  };
+
   return (
-    <section
-      style={{
-        position: "relative",
-        width: "100%",
-        minHeight: "480px",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
-        marginTop: "64px", // space below pricing
-      }}
-    >
-      {/* Gradient and grid overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          width: "100%",
-          height: "100%",
-          background:
-            "repeating-linear-gradient(transparent, transparent 48px, rgba(255,255,255,0.07) 49px, transparent 50px), repeating-linear-gradient(90deg, transparent, transparent 48px, rgba(255,255,255,0.07) 49px, transparent 50px)",
-          zIndex: 2,
-          pointerEvents: "none",
-        }}
-      />
-      {/* Content */}
-      <div style={{ position: "relative", zIndex: 2, textAlign: "center", width: "100%" }}>
-        <h1
-          style={{
-            fontSize: "3rem",
-            fontWeight: "600",
-            marginBottom: "32px",
-            lineHeight: "1.1",
-            color: "#fff",
-          }}
-        >
-          Intelligent Campaigns at <br /> your Click
-        </h1>
-        <form
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "12px",
-            marginBottom: "28px",
-          }}
-          onSubmit={e => e.preventDefault()}
-        >
-          <input
-            type="email"
-            placeholder="Your email"
-            style={{
-              padding: "12px 18px",
-              borderRadius: "8px",
-              border: "1px solid #444",
-              background: "rgba(30,30,30,0.7)",
-              color: "#fff",
-              fontSize: "1rem",
-              outline: "none",
-              width: "240px",
-            }}
-          />
-          <button
-            type="submit"
-            style={{
-              padding: "12px 24px",
-              borderRadius: "8px",
-              border: "none",
-              background: "#fff",
-              color: "#222",
-              fontWeight: "500",
-              fontSize: "1rem",
-              cursor: "pointer",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-              transition: "background 0.2s",
-            }}
-          >
-            Join waitlist
-          </button>
-        </form>
-        <div
-          style={{
-            color: "#ccc",
-            fontSize: "1.1rem",
-            marginTop: "8px",
-            letterSpacing: "0.01em",
-          }}
-        >
-          No credit card required &nbsp;·&nbsp; 7-days free trial
+    <>
+      <section className="relative w-full py-20 md:py-32 flex flex-col justify-center items-center bg-black">
+        {/* Subtle background elements matching your existing design */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900/10 to-transparent"></div>
+        
+        {/* Content container */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          {/* Main heading - matching your hero style */}
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Ready to Transform Your
+            <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
+              {" "}Campaign Strategy?
+            </span>
+          </h2>
+
+          {/* Subtitle - matching your existing text style */}
+          <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+            Join thousands of marketers who are already using AI to create 
+            high-converting campaigns in minutes, not hours.
+          </p>
+
+          {/* CTA form - matching your hero button style */}
+          <form onSubmit={handleJoinWaitlist} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-6">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email address"
+              className="bg-gray-800/50 border border-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:border-purple-500 focus:ring-1 focus:ring-purple-500/50 transition-all duration-200 w-full sm:w-80 text-base"
+              required
+            />
+            
+            <button
+              type="submit"
+              className="bg-white text-black px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg hover:bg-gray-100 transition-all duration-200 w-full sm:w-auto text-base"
+            >
+              Join Waitlist
+            </button>
+          </form>
+
+          {/* Trust indicators - simple and clean */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-sm text-gray-400 mb-16">
+            <span>✓ Free to join</span>
+            <span className="hidden sm:block">•</span>
+            <span>✓ 7-day free trial</span>
+            <span className="hidden sm:block">•</span>
+            <span>✓ No credit card required</span>
+          </div>
+
+          {/* Stats section - matching your card design pattern */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <div className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-6 backdrop-blur-sm">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">10k+</div>
+              <div className="text-gray-400 text-sm">Active Users</div>
+            </div>
+            <div className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-6 backdrop-blur-sm">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">95%</div>
+              <div className="text-gray-400 text-sm">Success Rate</div>
+            </div>
+            <div className="bg-gray-900/30 border border-gray-800/50 rounded-xl p-6 backdrop-blur-sm">
+              <div className="text-3xl md:text-4xl font-bold text-white mb-2">3x</div>
+              <div className="text-gray-400 text-sm">ROI Increase</div>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <Waitlist 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
+    </>
   );
 };
 

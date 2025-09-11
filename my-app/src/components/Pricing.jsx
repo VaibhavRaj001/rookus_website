@@ -84,7 +84,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Button
+              {/* <Button
                 className={`w-full py-3 rounded-xl font-medium ${
                   plan.highlight
                     ? "bg-purple-600 hover:bg-purple-700 text-white"
@@ -92,7 +92,7 @@ export default function Pricing() {
                 }`}
               >
                 Join waitlist
-              </Button>
+              </Button> */}
             </CardContent>
           </Card>
         ))}

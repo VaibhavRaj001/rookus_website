@@ -104,6 +104,28 @@ export const NavItems = ({ items, className, onItemClick }) => {
   );
 };
 
+export const NavbarButton = ({ children, href, onClick, className = "" }) => {
+  if (onClick) {
+    return (
+      <button
+        onClick={onClick}
+        className={`px-4 py-2 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors ${className}`}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      className={`px-4 py-2 bg-white text-black rounded-lg font-medium hover:bg-gray-100 transition-colors ${className}`}
+    >
+      {children}
+    </a>
+  );
+};
+
 export const MobileNav = ({ children, className, visible }) => {
   return (
     <motion.div
@@ -188,38 +210,5 @@ export const NavbarLogo = () => {
         height={30}
       />
     </a>
-  );
-};
-
-export const NavbarButton = ({
-  href,
-  as: Tag = "a",
-  children,
-  className,
-  variant = "primary",
-  ...props
-}) => {
-  const baseStyles =
-    "px-4 py-2 rounded-xl text-white text-sm font-bold relative cursor-pointer transform hover:-translate-y-0.5 transition-all duration-300 ease-in-out inline-block text-center";
-
-  // Non-linear conic gradient with purple + black
-  const variantStyles = {
-    primary:
-      "bg-[conic-gradient(at_top_left,_#a21caf_40%,_#000_70%,_#6d28d9_100%)] shadow-lg hover:shadow-purple-500/50",
-    secondary:
-      "bg-transparent border border-white/30 text-white hover:bg-white/10",
-    dark: "bg-black text-white shadow-lg hover:shadow-purple-900/50",
-    gradient:
-      "bg-[conic-gradient(at_bottom_right,_#a21caf_40%,_#000_70%,_#6d28d9_100%)] text-white shadow-lg hover:shadow-indigo-500/50",
-  };
-
-  return (
-    <Tag
-      href={href || undefined}
-      className={`${baseStyles} ${variantStyles[variant]} ${className || ""}`}
-      {...props}
-    >
-      {children}
-    </Tag>
   );
 };

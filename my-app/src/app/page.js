@@ -20,11 +20,18 @@ import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
 import Footer from "@/components/ui/Footer";
+import Waitlist from "@/components/waitlist";
 
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false); // top site nav (already used)
   const [sidebarOpen, setSidebarOpen] = useState(false); // dashboard sidebar on mobile
+  const [isWaitlistOpen, setIsWaitlistOpen] = useState(false);
+
+  const handleJoinWaitlist = () => {
+    setIsWaitlistOpen(true);
+    setMobileOpen(false); // Close mobile menu if open
+  };
 
   const navItems = [
     { name: "Features", link: "/" },
@@ -59,7 +66,7 @@ export default function Home() {
             <NavBody>
               <NavbarLogo />
               <NavItems items={navItems} />
-              <NavbarButton href="/">Join Waitlist</NavbarButton>
+              {/* <NavbarButton onClick={handleJoinWaitlist}>Join Waitlist</NavbarButton> */}
             </NavBody>
 
             <MobileNav>
@@ -83,7 +90,7 @@ export default function Home() {
                       {item.name}
                     </a>
                   ))}
-                  <NavbarButton href="/" className="mt-4 w-full">
+                  <NavbarButton onClick={handleJoinWaitlist} className="mt-4 w-full">
                     Join Waitlist
                   </NavbarButton>
                 </div>
@@ -141,11 +148,15 @@ export default function Home() {
           <p className="mt-2 text-base md:text-lg text-gray-300 max-w-2xl">
             Boost your ROI with intelligent automation
           </p>
-          <button className="mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition">
+          <button 
+            onClick={handleJoinWaitlist}
+            className="mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition"
+          >
             Book a Demo
           </button>
         </section>
 
+        {/* ...existing code... */}
         {/* Bottom Card / Dashboard wrapper */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 mt-10">
           {/* Outer gradient glow */}
@@ -423,6 +434,11 @@ export default function Home() {
       <Pricing />
       <CTA />
       <Footer />
+      
+      <Waitlist 
+        isOpen={isWaitlistOpen} 
+        onClose={() => setIsWaitlistOpen(false)} 
+      />
     </>
   );
 }
