@@ -9,16 +9,16 @@ export const BentoCards = () => {
       </h2>
 
       {/* Cards */}
-      <div className="flex flex-col md:flex-row gap-8 max-w-[1100px] w-full items-stretch justify-center">
+      <div className="flex flex-col md:flex-row gap-8 w-full max-w-6xl items-stretch justify-center">
+        
         {/* Left Card */}
-        <div
-          className="bg-[#0c0c14] rounded-xl border border-[#ffffff26] p-8 flex flex-col items-center justify-center"
-          style={{ width: 346, height: 400, minWidth: 346, minHeight: 400 }}
-        >
+        <div className="bg-[#0c0c14] rounded-xl border border-[#ffffff26] p-8 flex flex-col items-center justify-center w-full md:w-1/3 h-[300px] md:h-[400px]">
           <div className="w-20 h-20 flex items-center justify-center bg-[#181824] rounded-xl mb-6">
             <Database size={60} color="#a78bfa" />
           </div>
-          <h3 className="text-lg font-semibold mb-3 text-white text-center">Integrate on-prem data sources</h3>
+          <h3 className="text-lg font-semibold mb-3 text-white text-center">
+            Integrate on-prem data sources
+          </h3>
           <p className="text-sm text-gray-300 leading-relaxed text-center">
             On-prem DBs/files, Google Drive/Sheets, S3, BigQuery, Salesforce,
             HubSpot—into one customer profile & events layer.
@@ -26,18 +26,17 @@ export const BentoCards = () => {
         </div>
 
         {/* Right Card */}
-        <div
-          className="relative rounded-xl overflow-hidden bg-[#0c0c14] border border-[#ffffff26] flex items-end"
-          style={{ width: 744, height: 400, minWidth: 744, minHeight: 400 }}
-        >
+        <div className="relative rounded-xl overflow-hidden bg-[#0c0c14] border border-[#ffffff26] flex items-end w-full md:w-2/3 h-[300px] md:h-[400px]">
           <img
             src="/dashboard-preview.png"
             alt="Dashboard Preview"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ opacity: 0.85 }}
           />
-          <div className="relative z-10 p-8">
-            <h3 className="text-lg font-semibold mb-2 text-white">User-friendly dashboard</h3>
+          <div className="relative z-10 p-6 md:p-8">
+            <h3 className="text-lg font-semibold mb-2 text-white">
+              User-friendly dashboard
+            </h3>
             <p className="text-sm text-gray-200 max-w-sm">
               Track your regional Campaign analytics on the go and analyse top
               performing sentiments
@@ -49,4 +48,3 @@ export const BentoCards = () => {
     </section>
   );
 };
-

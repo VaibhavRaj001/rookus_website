@@ -45,15 +45,15 @@ export default function Pricing() {
   ];
 
   return (
-    <section className="relative w-full bg-black text-white py-20">
+    <section className="relative w-full overflow-hidden bg-black text-white py-20">
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#150015] to-black"></div>
-      <div className="absolute bottom-[-100px] w-[600px] h-[600px] bg-purple-600/30 rounded-full blur-[180px]"></div>
+      <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[80vw] max-w-[500px] h-[80vw] max-h-[500px] bg-purple-600/30 rounded-full blur-[180px]"></div>
 
       {/* Header */}
-      <div className="relative z-10 text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">Pricing</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto">
+      <div className="relative z-10 text-center mb-16 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
+        <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
           Choose the right plan to meet your SEO needs and start optimizing today.
         </p>
         <div className="mt-4">
@@ -64,7 +64,7 @@ export default function Pricing() {
       </div>
 
       {/* Pricing Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8 px-8 max-w-[1600px] mx-auto w-full">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
         {plans.map((plan, idx) => (
           <Card
             key={idx}
@@ -74,9 +74,9 @@ export default function Pricing() {
                 : "bg-[#0f0f0f] border-white/10"
             }`}
           >
-            <CardContent className="p-8 flex flex-col h-full">
-              <h3 className="text-xl font-semibold mb-2">{plan.name}</h3>
-              <p className="text-2xl font-bold mb-6">{plan.price}</p>
+            <CardContent className="p-6 sm:p-8 flex flex-col h-full">
+              <h3 className="text-lg sm:text-xl font-semibold mb-2">{plan.name}</h3>
+              <p className="text-xl sm:text-2xl font-bold mb-6">{plan.price}</p>
               <ul className="space-y-2 text-gray-300 text-sm mb-6 flex-1">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-center gap-2">
@@ -84,6 +84,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
+              {/* Button example */}
               {/* <Button
                 className={`w-full py-3 rounded-xl font-medium ${
                   plan.highlight

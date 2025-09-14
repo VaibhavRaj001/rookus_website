@@ -14,17 +14,17 @@ import {
 
 const dashboardFeatures = [
   {
-    img: "/dashboard-1.png",
+    img: "/img1.jpg",
     title: "End-to-End Campaign Automation → From idea to launch in minutes.",
     desc: "This AI-powered platform aligns campaigns with audience emotions and brand voice, acting as a multi-agent creative team. With no expertise needed, it integrates with tools like HubSpot and Figma, enables real-time collaboration, adapts to your brand style, and delivers faster, cost-efficient campaigns with measurable savings.",
   },
   {
-    img: "/dashboard-2.png",
+    img: "/img2.jpg",
     title: "Agent Features (The “Creative Team in the Cloud”)",
     desc: "Linda crafts brand-aligned copy—taglines, ads, and posts—tailored for each channel. Mike analyzes audience sentiment and campaign metrics to guide targeting, messaging, and positioning. Emelie designs on-brand visuals, palettes, and layouts across formats, integrating with Canva/Figma for seamless edits.",
   },
   {
-    img: "/dashboard-3.png",
+    img: "/img3.jpg",
     title: "Platform Features(Rookus as a product)",
     desc: "Rookus offers a single dashboard to plan, create, and launch campaigns with pre-built templates, multi-channel asset generation, and performance analytics. Train its AI on your branding, invite teams or clients to collaborate, and scale easily with pricing designed for creators, SMBs, and enterprises alike.",
   },
@@ -103,6 +103,7 @@ const Features = () => {
                 style={{ boxShadow: "0 0 40px 0 rgba(192,77,234,0.3)" }}
               />
             </div>
+            
             {/* Text */}
             <div className="md:w-[340px] w-full flex flex-col items-start">
               <div className="text-2xl font-bold text-white leading-tight mb-4" style={{ fontFamily: "inherit", lineHeight: "1.1" }}>
