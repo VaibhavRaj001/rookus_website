@@ -15,18 +15,18 @@ import {
 const dashboardFeatures = [
   {
     img: "/dashboard-1.png",
-    title: "Create Campaign Taglines,Scripts and track how well they perform",
-    desc: "This project creates and tests campaign taglines and scripts for ads, emails, and landing pages. Variants are tracked with UTM parameters and A/B testing across platforms like Google Analytics or Meta Ads, measuring CTR, CVR, CPA, and engagement to identify top performers and optimize ROI.",
+    title: "End-to-End Campaign Automation → From idea to launch in minutes.",
+    desc: "This AI-powered platform aligns campaigns with audience emotions and brand voice, acting as a multi-agent creative team. With no expertise needed, it integrates with tools like HubSpot and Figma, enables real-time collaboration, adapts to your brand style, and delivers faster, cost-efficient campaigns with measurable savings.",
   },
   {
     img: "/dashboard-2.png",
-    title: "Review and edit",
-    desc: "Performs complex editing tasks with SOTA human in the loop. Edit and review your content with advanced AI tools and human-in-the-loop workflows for maximum quality and compliance.",
+    title: "Agent Features (The “Creative Team in the Cloud”)",
+    desc: "Linda crafts brand-aligned copy—taglines, ads, and posts—tailored for each channel. Mike analyzes audience sentiment and campaign metrics to guide targeting, messaging, and positioning. Emelie designs on-brand visuals, palettes, and layouts across formats, integrating with Canva/Figma for seamless edits.",
   },
   {
     img: "/dashboard-3.png",
-    title: "Smart CTA automation",
-    desc: "Creates custom action items for you to manage your tasks. Automate your call-to-actions and task management with intelligent recommendations tailored to your campaign goals.",
+    title: "Platform Features(Rookus as a product)",
+    desc: "Rookus offers a single dashboard to plan, create, and launch campaigns with pre-built templates, multi-channel asset generation, and performance analytics. Train its AI on your branding, invite teams or clients to collaborate, and scale easily with pricing designed for creators, SMBs, and enterprises alike.",
   },
 ];
 
