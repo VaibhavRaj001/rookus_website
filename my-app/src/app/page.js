@@ -15,12 +15,14 @@ import {
 } from "../components/ui/Navbar";
 import Sponsors from "../components/ui/Sponsors";
 import { BentoCards } from "@/components/BentoCards";
-import Features from "@/components/Features";
+import Features from "@/components/features-3";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing";
 import CTA from "@/components/CTA";
 import Footer from "@/components/ui/Footer";
 import Waitlist from "@/components/waitlist";
+import Integrations from "@/components/Integrations";
+import { Link as ScrollLink } from "react-scroll";
 
 export default function Home() {
   const [expanded, setExpanded] = useState(false);
@@ -34,11 +36,11 @@ export default function Home() {
   };
 
   const navItems = [
-    { name: "Features", link: "/" },
-    { name: "Research", link: "/about" },
-    { name: "Pricing", link: "/" },
-    { name: "Blog", link: "/" },
-    { name: "Use Cases", link: "/" },
+    { name: "Sponsors", link: "sponsors" },
+    { name: "Research", link: "research" },
+    { name: "Features", link: "features" },
+    { name: "Testimonials", link: "testimonials" },
+    { name: "Pricing", link: "pricing" },
   ];
 
   const menuItems = [
@@ -81,16 +83,19 @@ export default function Home() {
               <MobileNavMenu isOpen={mobileOpen}>
                 <div className="flex flex-col w-full px-2 pb-4">
                   {navItems.map((item, idx) => (
-                    <a
+                    <ScrollLink
                       key={idx}
                       href={item.link}
                       className="px-4 py-2 text-gray-300 hover:text-white rounded"
                       onClick={() => setMobileOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </ScrollLink>
                   ))}
-                  <NavbarButton onClick={handleJoinWaitlist} className="mt-4 w-full">
+                  <NavbarButton
+                    onClick={handleJoinWaitlist}
+                    className="mt-4 w-full"
+                  >
                     Join Waitlist
                   </NavbarButton>
                 </div>
@@ -136,19 +141,20 @@ export default function Home() {
         {/* Hero */}
         <section className="relative z-10 flex flex-col items-center justify-center text-center px-6 pt-8">
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Empower Your <br />
+            AI That Supercharges <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
-              Campaigns
+              Your Marketing
             </span>
           </h1>
           <p className="mt-4 md:mt-6 text-base md:text-lg text-gray-300 max-w-2xl">
-            Enhance your campaigns with AI, where intelligent agents meet
-            secure, compliant execution.
+            Rookus optimizes and scales your existing campaigns with AI —
+            reducing guesswork, improving performance, and driving measurable
+            growth.
           </p>
           <p className="mt-2 text-base md:text-lg text-gray-300 max-w-2xl">
             Boost your ROI with intelligent automation
           </p>
-          <button 
+          <button
             onClick={handleJoinWaitlist}
             className="mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition"
           >
@@ -427,17 +433,28 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Sponsors />
-      <BentoCards />
-      <Features />
-      <Testimonials />
-      <Pricing />
+      <div id="sponsors">
+        <Sponsors />
+      </div>
+
+      <div id="research">
+        <Integrations /> {/* Or whatever corresponds to "Research" */}
+      </div>
+
+      <div id="features">
+        <BentoCards />
+        <Features />
+      </div>
+
+      <div id="pricing">
+        <Pricing />
+      </div>
       <CTA />
       <Footer />
-      
-      <Waitlist 
-        isOpen={isWaitlistOpen} 
-        onClose={() => setIsWaitlistOpen(false)} 
+
+      <Waitlist
+        isOpen={isWaitlistOpen}
+        onClose={() => setIsWaitlistOpen(false)}
       />
     </>
   );

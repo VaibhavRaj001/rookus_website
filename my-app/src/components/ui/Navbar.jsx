@@ -8,6 +8,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import React, { useRef, useState } from "react";
+import { Link as ScrollLink } from "react-scroll";
 
 export const Navbar = ({ children, className }) => {
   const ref = useRef(null);
@@ -72,7 +73,7 @@ export const NavBody = ({ children, className, visible }) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }) => {
+export const NavItems = ({ items, className }) => {
   const [hovered, setHovered] = useState(null);
 
   return (
@@ -84,12 +85,15 @@ export const NavItems = ({ items, className, onItemClick }) => {
       )}
     >
       {items.map((item, idx) => (
-        <a
+        <ScrollLink
+          key={idx}
+          to={item.link}
+          smooth={true}
+          duration={600}
+          offset={-100} // adjusts for fixed navbar height
+          spy={true}
           onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-gray-300 hover:text-white"
-          key={`link-${idx}`}
-          href={item.link}
+          className="relative px-4 py-2 text-gray-300 hover:text-white cursor-pointer"
         >
           {hovered === idx && (
             <motion.div
@@ -98,7 +102,7 @@ export const NavItems = ({ items, className, onItemClick }) => {
             />
           )}
           <span className="relative z-20">{item.name}</span>
-        </a>
+        </ScrollLink>
       ))}
     </motion.div>
   );
