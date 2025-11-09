@@ -1,103 +1,212 @@
-import { Card, CardContent } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Buttons";
 
-export default function Pricing() {
-  const plans = [
-    {
-      name: "Pricing",
-      price: "$29/mo",
-      features: [
-        "Keyword optimization",
-        "Automated meta tags",
-        "SEO monitoring",
-        "Monthly reports",
-      ],
-      highlight: false,
-    },
-    {
-      name: "Pro",
-      price: "$79/mo",
-      features: [
-        "Keyword optimization",
-        "Automated meta tags",
-        "SEO monitoring",
-        "Monthly reports",
-        "Content suggestions",
-        "Link optimization",
-      ],
-      highlight: true, 
-    },
-    {
-      name: "Business",
-      price: "$149/mo",
-      features: [
-        "Keyword optimization",
-        "Automated meta tags",
-        "SEO monitoring",
-        "Monthly reports",
-        "Content suggestions",
-        "Link optimization",
-        "Multi-user access",
-        "API integration",
-      ],
-      highlight: false,
-    },
-  ];
+const plans = [
+  {
+    id: "launch",
+    name: "Launch",
+    price: "$29",
+    cadence: "per month",
+    blurb: "Solo strategists validating campaign foundations.",
+    cta: "Start trial",
+    highlight: false,
+  },
+  {
+    id: "scale",
+    name: "Scale",
+    price: "$79",
+    cadence: "per month",
+    blurb: "Growth teams syncing creative and performance insights.",
+    cta: "Talk to sales",
+    highlight: true,
+  },
+  {
+    id: "enterprise",
+    name: "Enterprise",
+    price: "$149",
+    cadence: "per month",
+    blurb: "Global orgs aligning multi-channel GTM across regions.",
+    cta: "Request quote",
+    highlight: false,
+  },
+];
 
+const features = [
+  {
+    name: "Keyword optimization",
+    description: "AI-prioritized targets based on live search intent.",
+    availability: {
+      launch: true,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "Automated meta tags",
+    description: "Adaptive titles and descriptions pushed to CMS.",
+    availability: {
+      launch: true,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "SEO monitoring",
+    description: "Rank and crawl health alerts across properties.",
+    availability: {
+      launch: true,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "Monthly reports",
+    description: "Executive-ready snapshots emailed automatically.",
+    availability: {
+      launch: true,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "Content suggestions",
+    description: "Topic gaps and outlines delivered to your editors.",
+    availability: {
+      launch: false,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "Link optimization",
+    description: "Internal link flows recalibrated as priorities shift.",
+    availability: {
+      launch: false,
+      scale: true,
+      enterprise: true,
+    },
+  },
+  {
+    name: "Multi-user access",
+    description: "Add regions and partners with granular permissions.",
+    availability: {
+      launch: false,
+      scale: false,
+      enterprise: true,
+    },
+  },
+  {
+    name: "API integration",
+    description: "Sync performance metrics into your data warehouse.",
+    availability: {
+      launch: false,
+      scale: false,
+      enterprise: true,
+    },
+  },
+];
+
+export default function Pricing() {
   return (
     <section className="relative w-full overflow-hidden bg-black text-white py-20">
-      {/* Background Glow */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#150015] to-black"></div>
-      <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[80vw] max-w-[500px] h-[80vw] max-h-[500px] bg-purple-600/30 rounded-full blur-[180px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#150015] to-black" />
+      <div className="absolute bottom-[-100px] left-1/2 h-[80vw] max-h-[500px] w-[80vw] max-w-[500px] -translate-x-1/2 rounded-full bg-purple-600/30 blur-[180px]" />
 
-      {/* Header */}
-      <div className="relative z-10 text-center mb-16 px-4">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Pricing</h2>
-        <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">
-          Choose the right plan to meet your SEO needs and start optimizing today.
+      <div className="relative z-10 mb-16 px-4 text-center">
+        <h2 className="text-3xl font-bold md:text-4xl">Pricing</h2>
+        <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-300 md:text-base">
+          Compare plans at a glance and pick the stack that keeps your GTM teams in sync.
         </p>
-        <div className="mt-4">
-          <span className="px-4 py-1 rounded-full bg-purple-600/20 text-pink-400 text-sm font-medium">
-            Supercharge
-          </span>
+        <div className="mt-4 inline-flex items-center gap-2 rounded-full bg-purple-600/20 px-4 py-1 text-xs font-medium uppercase tracking-[0.35em] text-pink-400">
+          Align Faster
         </div>
       </div>
 
-      {/* Pricing Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto w-full">
-        {plans.map((plan, idx) => (
-          <div key={idx} className="relative flex justify-center">
-            <Card
-              className={`relative flex flex-col rounded-2xl border overflow-hidden ${
-                plan.highlight
-                  ? "bg-gradient-to-b from-[#1a001a] to-[#0f0010] shadow-lg shadow-purple-500/50"
-                  : "bg-[#0f0f0f] border-white/10"
-              }`}
+      <div className="relative z-10 px-4 sm:px-6 md:px-8">
+        <div className="overflow-x-auto">
+          <div className="min-w-[720px] rounded-3xl border border-white/10 bg-white/[0.03] backdrop-blur">
+            <div
+              className="grid border-b border-white/10"
+              style={{ gridTemplateColumns: "220px repeat(3, minmax(180px, 1fr))" }}
             >
-              {/* Semicircular fade-up glow for highlighted card */}
-              {plan.highlight && (
+              <div className="px-6 py-6 text-left">
+                <p className="text-sm font-medium text-white/80">Feature</p>
+                <p className="mt-1 text-xs text-gray-400">
+                  Toggle-ready comparison uses real availability so teams can align on the package they need.
+                </p>
+              </div>
+              {plans.map((plan, index) => (
                 <div
-                  className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-16 rounded-b-full pointer-events-none blur-3xl"
-                  style={{
-                    background: "radial-gradient(ellipse at bottom, rgba(255,0,128,0.5), transparent 70%)",
-                  }}
-                />
-              )}
+                  key={plan.id}
+                  className={`px-6 py-6 ${index > 0 ? "border-l border-white/10" : ""} ${
+                    plan.highlight ? "bg-white/[0.06]" : ""
+                  }`}
+                >
+                  <div className="flex flex-col gap-3 text-center">
+                    <div className="text-sm font-semibold uppercase tracking-[0.2em] text-gray-400">
+                      {plan.name}
+                    </div>
+                    <div>
+                      <span className="text-3xl font-semibold text-white">{plan.price}</span>
+                      <span className="ml-1 text-sm text-gray-400">{plan.cadence}</span>
+                    </div>
+                    <p className="text-xs text-gray-400">{plan.blurb}</p>
+                    <Button
+                      variant={plan.highlight ? "highlight" : "default"}
+                      className="w-full justify-center py-2 text-sm"
+                    >
+                      {plan.cta}
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-              <CardContent className="p-6 sm:p-8 flex flex-col h-full relative z-10">
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">{plan.name}</h3>
-                <p className="text-xl sm:text-2xl font-bold mb-6">{plan.price}</p>
-                <ul className="space-y-2 text-gray-300 text-sm mb-6 flex-1">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span className="text-purple-400">✓</span> {feature}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
+            {features.map((feature, featureIndex) => (
+              <div
+                key={feature.name}
+                className="grid"
+                style={{ gridTemplateColumns: "220px repeat(3, minmax(180px, 1fr))" }}
+              >
+                <div
+                  className={`px-6 py-4 ${
+                    featureIndex !== features.length - 1 ? "border-b border-white/5" : ""
+                  }`}
+                >
+                  <p className="text-sm font-medium text-white">{feature.name}</p>
+                  <p className="mt-1 text-xs text-gray-400">{feature.description}</p>
+                </div>
+                {plans.map((plan, planIndex) => {
+                  const included = feature.availability[plan.id];
+                  return (
+                    <div
+                      key={plan.id}
+                      className={`flex items-center justify-center px-6 py-4 ${
+                        planIndex > 0 ? "border-l border-white/5" : ""
+                      } ${
+                        featureIndex !== features.length - 1 ? "border-b border-white/5" : ""
+                      } ${plan.highlight ? "bg-white/[0.02]" : ""}`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={included}
+                        readOnly
+                        disabled
+                        className={`h-4 w-4 rounded border-white/30 bg-transparent accent-purple-500 ${
+                          included ? "opacity-100" : "opacity-40"
+                        }`}
+                        aria-label={`${plan.name} includes ${feature.name}`}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-gray-500">
+          Need a custom rollout? Bundle multi-brand access, SSO, and dedicated enablement with an enterprise agreement.
+        </p>
       </div>
     </section>
   );

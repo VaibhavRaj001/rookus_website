@@ -30,6 +30,7 @@ export default function FeaturesSectionDemo() {
       skeleton: <SkeletonThree />,
       className:
         "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
+      hideOnMobile: true,
     },
     {
       title: "Seamless Collaboration",
@@ -37,6 +38,7 @@ export default function FeaturesSectionDemo() {
         "Run sales campaigns directly using HubSpot integration or bring your visuals anywhere with Figma, Canva, and PowerPoint plugins.",
       skeleton: <SkeletonFour />,
       className: "col-span-1 lg:col-span-3 border-b lg:border-none",
+      hideOnMobile: true,
     },
   ];
   return (
@@ -59,7 +61,13 @@ export default function FeaturesSectionDemo() {
           <div
             className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
             {features.map((feature) => (
-              <FeatureCard key={feature.title} className={feature.className}>
+              <FeatureCard
+                key={feature.title}
+                className={cn(
+                  feature.className,
+                  feature.hideOnMobile ? "hidden lg:block" : ""
+                )}
+              >
                 <FeatureTitle>{feature.title}</FeatureTitle>
                 <FeatureDescription>{feature.description}</FeatureDescription>
                 <div className=" h-full w-full">{feature.skeleton}</div>
@@ -134,24 +142,36 @@ export const SkeletonOne = () => {
 
 export const SkeletonThree = () => {
   return (
-    <a
-      href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-      target="__blank"
-      className="relative flex gap-10  h-full group/image">
-      <div
-        className="w-full  mx-auto bg-transparent group h-full">
-        <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
-          {/* TODO */}
-          <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
-          <img
-            src="https://assets.aceternity.com/fireship.jpg"
-            alt="header"
-            width={800}
-            height={800}
-            className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200" />
+    <>
+      <a
+        href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+        target="__blank"
+        className="relative hidden h-full gap-10 lg:flex group/image"
+      >
+        <div className="w-full mx-auto h-full bg-transparent group">
+          <div className="relative flex h-full w-full flex-col space-y-2">
+            <IconBrandYoutubeFilled className="absolute inset-0 m-auto h-20 w-20 text-red-500" />
+            <img
+              src="https://assets.aceternity.com/fireship.jpg"
+              alt="Rookus platform breakdown"
+              width={800}
+              height={800}
+              className="h-full w-full rounded-sm object-cover object-center transition-all duration-200 group-hover/image:blur-md"
+            />
+          </div>
         </div>
+      </a>
+
+      <div className="flex h-full w-full flex-col justify-between rounded-xl border border-white/10 bg-neutral-900/60 p-6 lg:hidden">
+        <div>
+          <p className="text-sm font-medium text-white">Desktop walk-through</p>
+          <p className="mt-2 text-xs text-neutral-400">
+            Watch the full campaign orchestration demo on a larger display.
+          </p>
+        </div>
+        <p className="text-xs text-neutral-500">Switch to desktop to stream the replay.</p>
       </div>
-    </a>
+    </>
   );
 };
 
@@ -230,9 +250,11 @@ export const SkeletonTwo = () => {
 
 export const SkeletonFour = () => {
   return (
-    <div
-      className="h-60 md:h-60  flex flex-col items-center relative bg-transparent mt-10">
-      <Globe className="absolute -right-10 md:-right-10 -bottom-80 md:-bottom-72" />
+    <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent md:h-60">
+      <div className="flex h-full w-full items-center justify-center rounded-2xl border border-white/10 bg-neutral-900/60 px-6 py-8 text-center text-sm text-neutral-400 lg:hidden">
+        Global signal map available on desktop dashboards.
+      </div>
+      <Globe className="absolute -right-10 -bottom-80 hidden md:-right-10 md:-bottom-72 lg:block" />
     </div>
   );
 };
