@@ -1,10 +1,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
-import createGlobe from "cobe";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { IconBrandYoutubeFilled } from "@tabler/icons-react";
-
 
 export default function FeaturesSectionDemo() {
   const features = [
@@ -13,61 +10,33 @@ export default function FeaturesSectionDemo() {
       description:
         "Stop guessing. Use OLAP-powered campaign intelligence to get live insights on ROAS, CAC, CTR, and LTV from your Top Performing Slices.",
       skeleton: <SkeletonOne />,
-      className:
-        "col-span-1 lg:col-span-4 border-b lg:border-r dark:border-neutral-800",
+      className: "col-span-1",
     },
     {
       title: "Capture pictures with AI",
       description:
         "Capture stunning photos effortlessly using our advanced AI technology.",
       skeleton: <SkeletonTwo />,
-      className: "border-b col-span-1 lg:col-span-2 dark:border-neutral-800",
-    },
-    {
-      title: "Always Optimizing: Our Customer Feedback Reasoning Model (CFRM)",
-      description:
-        "is a zero-shot reinforcement loop that adapts to live metrics to improve creative assets automatically—no full retraining required.",
-      skeleton: <SkeletonThree />,
-      className:
-        "col-span-1 lg:col-span-3 lg:border-r  dark:border-neutral-800",
-      hideOnMobile: true,
-    },
-    {
-      title: "Seamless Collaboration",
-      description:
-        "Run sales campaigns directly using HubSpot integration or bring your visuals anywhere with Figma, Canva, and PowerPoint plugins.",
-      skeleton: <SkeletonFour />,
-      className: "col-span-1 lg:col-span-3 border-b lg:border-none",
-      hideOnMobile: true,
+      className: "col-span-1",
     },
   ];
   return (
-    // Force dark theme for this component
     <div className="dark bg-black text-white">
       <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
         <div className="px-8">
-          <h4
-            className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-white">
+          <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-white">
             Packed with thousands of features
           </h4>
 
-          <p
-            className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-400 text-center font-normal">
+          <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-400 text-center font-normal">
             From Image generation to video generation, Everything AI has APIs for
             literally everything. It can even create this website copy for you.
           </p>
         </div>
         <div className="relative ">
-          <div
-            className="grid grid-cols-1 lg:grid-cols-6 mt-12 xl:border rounded-md dark:border-neutral-800">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 xl:border rounded-md dark:border-neutral-800">
             {features.map((feature) => (
-              <FeatureCard
-                key={feature.title}
-                className={cn(
-                  feature.className,
-                  feature.hideOnMobile ? "hidden lg:block" : ""
-                )}
-              >
+              <FeatureCard key={feature.title} className={feature.className}>
                 <FeatureTitle>{feature.title}</FeatureTitle>
                 <FeatureDescription>{feature.description}</FeatureDescription>
                 <div className=" h-full w-full">{feature.skeleton}</div>
@@ -80,31 +49,19 @@ export default function FeaturesSectionDemo() {
   );
 }
 
-const FeatureCard = ({
-  children,
-  className
-}) => {
-  return (
-    <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>
-      {children}
-    </div>
-  );
+const FeatureCard = ({ children, className }) => {
+  return <div className={cn(`p-4 sm:p-8 relative overflow-hidden`, className)}>{children}</div>;
 };
 
-const FeatureTitle = ({
-  children
-}) => {
+const FeatureTitle = ({ children }) => {
   return (
-    <p
-      className=" max-w-5xl mx-auto text-left tracking-tight text-white text-xl md:text-2xl md:leading-snug">
+    <p className=" max-w-5xl mx-auto text-left tracking-tight text-white text-xl md:text-2xl md:leading-snug">
       {children}
     </p>
   );
 };
 
-const FeatureDescription = ({
-  children
-}) => {
+const FeatureDescription = ({ children }) => {
   return (
     <p
       className={cn(
@@ -120,58 +77,20 @@ const FeatureDescription = ({
 export const SkeletonOne = () => {
   return (
     <div className="relative flex py-8 px-2 gap-10 h-full">
-      <div
-        className="w-full  p-5  mx-auto bg-neutral-900 shadow-2xl group h-full">
+      <div className="w-full  p-5  mx-auto bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
-          {/* TODO */}
           <img
             src="/linear.webp"
             alt="header"
             width={800}
             height={800}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm" />
+            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
+          />
         </div>
       </div>
-      <div
-        className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-black via-black to-transparent w-full pointer-events-none" />
-      <div
-        className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-black via-transparent to-transparent w-full pointer-events-none" />
+      <div className="absolute bottom-0 z-40 inset-x-0 h-60 bg-gradient-to-t from-black via-black to-transparent w-full pointer-events-none" />
+      <div className="absolute top-0 z-40 inset-x-0 h-60 bg-gradient-to-b from-black via-transparent to-transparent w-full pointer-events-none" />
     </div>
-  );
-};
-
-export const SkeletonThree = () => {
-  return (
-    <>
-      <a
-        href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
-        target="__blank"
-        className="relative hidden h-full gap-10 lg:flex group/image"
-      >
-        <div className="w-full mx-auto h-full bg-transparent group">
-          <div className="relative flex h-full w-full flex-col space-y-2">
-            <IconBrandYoutubeFilled className="absolute inset-0 m-auto h-20 w-20 text-red-500" />
-            <img
-              src="https://assets.aceternity.com/fireship.jpg"
-              alt="Rookus platform breakdown"
-              width={800}
-              height={800}
-              className="h-full w-full rounded-sm object-cover object-center transition-all duration-200 group-hover/image:blur-md"
-            />
-          </div>
-        </div>
-      </a>
-
-      <div className="flex h-full w-full flex-col justify-between rounded-xl border border-white/10 bg-neutral-900/60 p-6 lg:hidden">
-        <div>
-          <p className="text-sm font-medium text-white">Desktop walk-through</p>
-          <p className="mt-2 text-xs text-neutral-400">
-            Watch the full campaign orchestration demo on a larger display.
-          </p>
-        </div>
-        <p className="text-xs text-neutral-500">Switch to desktop to stream the replay.</p>
-      </div>
-    </>
   );
 };
 
@@ -197,9 +116,7 @@ export const SkeletonTwo = () => {
     },
   };
   return (
-    <div
-      className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
-      {/* TODO */}
+    <div className="relative flex flex-col items-start p-8 gap-10 h-full overflow-hidden">
       <div className="flex flex-row -ml-20">
         {images.map((image, idx) => (
           <motion.div
@@ -216,7 +133,8 @@ export const SkeletonTwo = () => {
               alt="bali images"
               width="500"
               height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0" />
+              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
+            />
           </motion.div>
         ))}
       </div>
@@ -236,74 +154,13 @@ export const SkeletonTwo = () => {
               alt="bali images"
               width="500"
               height="500"
-              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0" />
+              className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover shrink-0"
+            />
           </motion.div>
         ))}
       </div>
-      <div
-        className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-black to-transparent  h-full pointer-events-none" />
-      <div
-        className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-black  to-transparent h-full pointer-events-none" />
+      <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-black to-transparent  h-full pointer-events-none" />
+      <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-black  to-transparent h-full pointer-events-none" />
     </div>
-  );
-};
-
-export const SkeletonFour = () => {
-  return (
-    <div className="relative mt-10 flex h-60 flex-col items-center bg-transparent md:h-60">
-      <div className="flex h-full w-full items-center justify-center rounded-2xl border border-white/10 bg-neutral-900/60 px-6 py-8 text-center text-sm text-neutral-400 lg:hidden">
-        Global signal map available on desktop dashboards.
-      </div>
-      <Globe className="absolute -right-10 -bottom-80 hidden md:-right-10 md:-bottom-72 lg:block" />
-    </div>
-  );
-};
-
-export const Globe = ({
-  className
-}) => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    let phi = 0;
-
-    if (!canvasRef.current) return;
-
-    const globe = createGlobe(canvasRef.current, {
-      devicePixelRatio: 2,
-      width: 600 * 2,
-      height: 600 * 2,
-      phi: 0,
-      theta: 0,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.05, 0.05, 0.05],
-      markerColor: [0.1, 0.8, 1],
-      glowColor: [0.2, 0.6, 1],
-      markers: [
-        // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
-      ],
-      onRender: (state) => {
-        // Called on every animation frame.
-        // `state` will be an empty object, return updated params.
-        state.phi = phi;
-        phi += 0.01;
-      },
-    });
-
-    return () => {
-      globe.destroy();
-    };
-  }, []);
-
-  return (
-    <canvas
-      ref={canvasRef}
-      style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
-      className={className} />
   );
 };
