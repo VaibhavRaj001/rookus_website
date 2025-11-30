@@ -28,7 +28,7 @@ export const BentoCards = () => {
         {/* Right Card */}
         <div className="relative rounded-xl overflow-hidden bg-[#0c0c14] border border-[#ffffff26] flex items-end w-full md:w-2/3 h-[300px] md:h-[400px]">
           <img
-            src="/dashboard-preview.png"
+            src="/dash.jpg"
             alt="Dashboard Preview"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ opacity: 0.85 }}

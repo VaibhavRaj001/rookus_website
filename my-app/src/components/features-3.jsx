@@ -6,14 +6,14 @@ import { motion } from "framer-motion";
 export default function FeaturesSectionDemo() {
   const features = [
     {
-      title: "Performance Analytics",
+      title: "End-to-End Campaign Generation",
       description:
-        "Stop guessing. Use OLAP-powered campaign intelligence to get live insights on ROAS, CAC, CTR, and LTV from your Top Performing Slices.",
+        "Generates strategies, copy, visuals, ads, emails, and scripts Creates personas, funnels, and messaging automatically",
       skeleton: <SkeletonOne />,
       className: "col-span-1",
     },
     {
-      title: "Capture pictures with AI",
+      title: "AI-Powered Insights & Retrieval",
       description:
         "Capture stunning photos effortlessly using our advanced AI technology.",
       skeleton: <SkeletonTwo />,
@@ -29,8 +29,8 @@ export default function FeaturesSectionDemo() {
           </h4>
 
           <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-400 text-center font-normal">
-            From Image generation to video generation, Everything AI has APIs for
-            literally everything. It can even create this website copy for you.
+            One AI system that understands your full marketing ecosystem
+            Acts as strategist, designer, writer, analyst, and performance manager
           </p>
         </div>
         <div className="relative ">
@@ -80,11 +80,11 @@ export const SkeletonOne = () => {
       <div className="w-full  p-5  mx-auto bg-neutral-900 shadow-2xl group h-full">
         <div className="flex flex-1 w-full h-full flex-col space-y-2  ">
           <img
-            src="/linear.webp"
+            src="/main-800.jpg"
             alt="header"
             width={800}
             height={800}
-            className="h-full w-full aspect-square object-cover object-left-top rounded-sm"
+            className="h-full w-full aspect-square object-contain object-left-top rounded-sm"
           />
         </div>
       </div>
@@ -96,11 +96,11 @@ export const SkeletonOne = () => {
 
 export const SkeletonTwo = () => {
   const images = [
-    "https://images.unsplash.com/photo-1517322048670-4fba75cbbb62?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1573790387438-4da905039392?q=80&w=3425&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1555400038-63f5ba517a47?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1554931670-4ebfabf6e7a9?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1546484475-7f7bd55792da?q=80&w=2581&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "/f1.jpg",
+    "/f3.jpg",
+    "/f2.jpg",
+    "/f5.jpg",
+    "/f4.jpg",
   ];
 
   const imageVariants = {
