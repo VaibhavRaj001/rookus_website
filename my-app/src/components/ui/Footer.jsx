@@ -10,18 +10,35 @@ export default function Footer() {
   return (
     <footer className="bg-black text-gray-400 px-4 md:px-8 py-10">
       <div className="max-w-7xl mx-auto w-full">
-        {/* Layout: column on mobile, row on md+ */}
-        <div className="flex flex-col md:flex-row md:items-start md:space-x-8">
-          {/* LEFT: logo on top, social icons pinned to bottom on md */}
-          <div className="flex flex-col justify-between h-auto md:h-60 w-full md:w-auto mb-8 md:mb-0">
-            {/* Logo (top-left) */}
-            <div className="flex items-center space-x-3 mb-6 md:mb-0">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600" />
-              <span className="text-white font-medium">Rookus</span>
+        {/* MOBILE TOP BAR: social icons left, logo right (only on mobile) */}
+        <div className="flex items-center justify-between md:hidden mb-6">
+          <div className="flex items-center space-x-4 text-gray-400">
+            <a href="#" aria-label="Twitter" className="hover:text-white transition">
+              <FaXTwitter className="h-5 w-5" />
+            </a>
+            <a href="#" aria-label="Instagram" className="hover:text-white transition">
+              <FaInstagram className="h-5 w-5" />
+            </a>
+            <a href="#" aria-label="Facebook" className="hover:text-white transition">
+              <FaFacebook className="h-5 w-5" />
+            </a>
+            <a href="#" aria-label="LinkedIn" className="hover:text-white transition">
+              <FaLinkedin className="h-5 w-5" />
+            </a>
+          </div>
+
+          <img src="/rookus-logo.png" alt="Rookus" className="w-28 h-auto object-contain" />
+        </div>
+
+        {/* MAIN: logo+social (desktop) on left, links on right. On mobile the desktop logo block is hidden and links sit below the top bar */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+          {/* DESKTOP: logo + social (hidden on mobile) */}
+          <div className="hidden md:flex flex-col justify-between h-auto md:h-60 w-full md:w-auto items-start">
+            <div className="flex items-center space-x-3 mb-4 md:mb-0">
+              <img src="/rookus-logo.png" alt="Rookus" className="w-28 h-auto object-contain" />
             </div>
 
-            {/* Social icons (bottom-left on md, just below logo on mobile) */}
-            <div className="flex items-center space-x-4 text-gray-400">
+            <div className="flex items-center space-x-4 text-gray-400 mt-2 md:mt-0">
               <a href="#" aria-label="Twitter" className="hover:text-white transition">
                 <FaXTwitter className="h-5 w-5" />
               </a>
@@ -37,11 +54,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* RIGHT: responsive columns:
-              - mobile (default): grid with 2 columns (grid-cols-2)
-              - md+: switch to flex row with columns pushed to the right
-          */}
-          <div className="w-full md:w-auto md:ml-auto">
+          {/* LINKS (visible on all sizes) */}
+          <div className="w-full md:w-auto">
             <div
               className="
                 grid grid-cols-2 gap-x-6 gap-y-6

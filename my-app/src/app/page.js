@@ -269,9 +269,6 @@ export default function Home() {
             <div className="relative z-10 w-full">
               <div className="mx-auto flex w-full max-w-screen-sm flex-col gap-12 px-5">
                 <section className="rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-10 text-center shadow-[0_0_40px_rgba(99,102,241,0.15)] backdrop-blur">
-                  <span className="text-xs font-mono uppercase tracking-[0.35em] text-purple-300">
-                    Mobile Command Deck
-                  </span>
                   <h1 className="mt-4 text-4xl font-semibold leading-tight">
                     Run every launch directly from your phone.
                   </h1>

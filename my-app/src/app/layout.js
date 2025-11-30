@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata = {
   title: "Rookus",
-  description: "Next.js Application",
+  description: "Where AI meets Creativity",
 };
 
 export default function RootLayout({ children }) {
