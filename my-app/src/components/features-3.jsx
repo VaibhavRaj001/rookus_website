@@ -22,7 +22,7 @@ export default function FeaturesSectionDemo() {
   ];
   return (
     <div className="dark bg-black text-white">
-      <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto">
+      <div className="relative z-20 py-8 lg:py-20 max-w-7xl mx-auto">
         <div className="px-8">
           <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-white">
             Packed with thousands of features
@@ -34,7 +34,7 @@ export default function FeaturesSectionDemo() {
           </p>
         </div>
         <div className="relative ">
-          <div className="grid grid-cols-1 lg:grid-cols-2 mt-12 xl:border rounded-md dark:border-neutral-800">
+          <div className="grid grid-cols-1 lg:grid-cols-2 mt-8 xl:border rounded-md dark:border-neutral-800">
             {features.map((feature) => (
               <FeatureCard key={feature.title} className={feature.className}>
                 <FeatureTitle>{feature.title}</FeatureTitle>
