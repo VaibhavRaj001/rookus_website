@@ -184,7 +184,10 @@ export default function Home() {
             <NavBody>
               <NavbarLogo />
               <NavItems items={navItems} />
-              <NavbarButton onClick={handleJoinWaitlist}>
+              <NavbarButton 
+                onClick={handleJoinWaitlist}
+                className="cursor-pointer"
+                >
                 Join Waitlist
               </NavbarButton>
             </NavBody>
@@ -532,7 +535,7 @@ export default function Home() {
               </p>
               <button
                 onClick={handleJoinWaitlist}
-                className="mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition"
+                className="mt-6 bg-white text-black px-5 py-2.5 rounded-lg font-semibold shadow-md hover:shadow-lg transition cursor-pointer"
               >
                 Book a Demo
               </button>
