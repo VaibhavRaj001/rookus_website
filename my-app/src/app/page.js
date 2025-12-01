@@ -36,6 +36,7 @@ import CTA from "@/components/CTA";
 import Footer from "@/components/ui/Footer";
 import Waitlist from "@/components/waitlist";
 import Integrations from "@/components/Integrations";
+import FAQ from "../components/faq";
 import { Link as ScrollLink } from "react-scroll";
 
 export default function Home() {
@@ -747,32 +748,34 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* Desktop experience */}
+        <section id="sponsors" className="bg-black">
+          <Sponsors />
+        </section>
+
+        <section id="research" className="bg-black">
+          <Integrations />
+        </section>
+
+        <section id="features" className="bg-black">
+          <BentoCards />
+          <Features />
+        </section>
+
+        <section id="pricing" className="bg-black">
+          <Pricing />
+        </section>
+        <FAQ />
+
+        <CTA />
+        <Footer />
+
+        <Waitlist
+          isOpen={isWaitlistOpen}
+          onClose={() => setIsWaitlistOpen(false)}
+        />
       </main>
-
-      <section id="sponsors" className="bg-black">
-        <Sponsors />
-      </section>
-
-      <section id="research" className="bg-black">
-        <Integrations />
-      </section>
-
-      <section id="features" className="bg-black">
-        <BentoCards />
-        <Features />
-      </section>
-
-      <section id="pricing" className="bg-black">
-        <Pricing />
-      </section>
-
-      <CTA />
-      <Footer />
-
-      <Waitlist
-        isOpen={isWaitlistOpen}
-        onClose={() => setIsWaitlistOpen(false)}
-      />
     </>
   );
 }
