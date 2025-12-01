@@ -272,9 +272,9 @@ export default function Home() {
             <div className="relative z-10 w-full">
               <div className="mx-auto flex w-full max-w-screen-sm flex-col gap-12 px-5">
                 <section className="rounded-3xl border border-white/10 bg-white/[0.04] px-6 py-10 text-center shadow-[0_0_40px_rgba(99,102,241,0.15)] backdrop-blur">
-                  <h1 className="mt-4 text-4xl font-semibold leading-tight">
+                  <h2 className="mt-4 text-4xl font-semibold leading-tight">
                     Run every launch directly from your phone.
-                  </h1>
+                  </h2>
                   <p className="mt-4 text-base text-gray-300">
                     Rookus compresses creative ops, analytics and approvals into a responsive workspace built for busy GTM teams.
                   </p>
