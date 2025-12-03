@@ -5,236 +5,88 @@ import {
   FaFacebook,
   FaLinkedin,
 } from "react-icons/fa6";
+import FAQ from "../faq";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-gray-400 px-4 md:px-8 py-10">
+    <footer className="bg-black text-gray-400 px-4 md:px-8 py-8 md:py-12 border-t border-gray-800">
       <div className="max-w-7xl mx-auto w-full">
-        {/* MOBILE TOP BAR: social icons left, logo right (only on mobile) */}
-        <div className="flex items-center justify-between md:hidden mb-6">
+        {/* LOGO AND SOCIAL - HEADER */}
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-8 pb-8 border-b border-gray-800">
+          <img
+            src="/rookus-logo.png"
+            alt="Rookus"
+            className="w-32 h-auto object-contain"
+          />
           <div className="flex items-center space-x-4 text-gray-400">
             <a
-              href="#"
-              aria-label="Twitter"
-              className="hover:text-white transition"
-            >
-              <FaXTwitter className="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.instagram.com/rookus.in/"
+              href="https://twitter.com/rookus"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:text-white transition"
+              aria-label="Twitter"
+              className="hover:text-white hover:scale-110 transition p-2.5 border border-gray-700 rounded-full"
             >
-              <FaInstagram className="h-5 w-5" />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="hover:text-white transition"
-            >
-              <FaFacebook className="h-5 w-5" />
+              <FaXTwitter className="h-5 w-5" />
             </a>
             <a
               href="https://www.linkedin.com/company/rookus-in/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="hover:text-white transition"
+              className="hover:text-white hover:scale-110 transition p-2.5 border border-gray-700 rounded-full"
             >
               <FaLinkedin className="h-5 w-5" />
             </a>
+            <a
+              href="https://www.instagram.com/rookus.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-white hover:scale-110 transition p-2.5 border border-gray-700 rounded-full"
+            >
+              <FaInstagram className="h-5 w-5" />
+            </a>
           </div>
-
-          <img
-            src="/rookus-logo.png"
-            alt="Rookus"
-            className="w-28 h-auto object-contain"
-          />
         </div>
 
-        {/* MAIN: logo+social (desktop) on left, links on right. On mobile the desktop logo block is hidden and links sit below the top bar */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
-          {/* DESKTOP: logo + social (hidden on mobile) */}
-          <div className="hidden md:flex flex-col justify-between h-auto md:h-60 w-full md:w-auto items-start">
-            <div className="flex items-center space-x-3 mb-4 md:mb-0">
-              <img
-                src="/rookus-logo.png"
-                alt="Rookus"
-                className="w-28 h-auto object-contain"
-              />
-            </div>
-
-            <div className="flex items-center space-x-4 text-gray-400 mt-2 md:mt-0">
-              <a
-                href="#"
-                aria-label="Twitter"
-                className="hover:text-white transition"
-              >
-                <FaXTwitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/rookus.in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="hover:text-white transition"
-              >
-                <FaInstagram className="h-5 w-5" />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="hover:text-white transition"
-              >
-                <FaFacebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/company/rookus-in/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="hover:text-white transition"
-              >
-                <FaLinkedin className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* LINKS (visible on all sizes) */}
-          <div className="w-full md:w-auto">
-            <div
-              className="
-                grid grid-cols-2 gap-x-6 gap-y-6
-                md:flex md:flex-row md:items-start md:gap-x-16 md:gap-y-10 md:justify-end
-                text-left
-              "
+        {/* LINKS - CENTERED */}
+        <div className="flex flex-col items-center justify-center gap-6 mb-8">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 text-sm flex-wrap">
+            <a href="#home" className="text-gray-400 hover:text-white transition">
+              Home
+            </a>
+            <a href="#about" className="text-gray-400 hover:text-white transition">
+              About
+            </a>
+            <a
+              href="#sponsors"
+              className="text-gray-400 hover:text-white transition"
             >
-              {/* Product */}
-              <div className="min-w-[140px]">
-                <h3 className="text-white font-semibold mb-4">Product</h3>
-                <ul className="space-y-3 text-sm text-gray-400">
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Features
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Integration
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Updates
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      FAQ
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Pricing
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Company */}
-              <div className="min-w-[140px]">
-                <h3 className="text-white font-semibold mb-4">Company</h3>
-                <ul className="space-y-3 text-sm text-gray-400">
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      About
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Blog
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Careers
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Manifesto
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Press
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Contact
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Resources */}
-              <div className="min-w-[140px]">
-                <h3 className="text-white font-semibold mb-4">Resources</h3>
-                <ul className="space-y-3 text-sm text-gray-400">
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Examples
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Community
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Guides
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Docs
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Press
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Legal */}
-              <div className="min-w-[120px]">
-                <h3 className="text-white font-semibold mb-4">Legal</h3>
-                <ul className="space-y-3 text-sm text-gray-400">
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Privacy
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Terms
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:text-white">
-                      Security
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              Sponsors
+            </a>
+            <a href="#research" className="text-gray-400 hover:text-white transition">
+              Research
+            </a>
+            <a href="#features" className="text-gray-400 hover:text-white transition">
+              Features
+            </a>
+            <a href="#pricing" className="text-gray-400 hover:text-white transition">
+              Pricing
+            </a>
+            <a href="#FAQ" className="text-gray-400 hover:text-white transition">
+              FAQ
+            </a>
+            <a href="mailto:campaigns@rookus.co.in" className="text-gray-400 hover:text-white transition">
+              Contact Us
+            </a>
           </div>
+        </div>
+
+        {/* COPYRIGHT - CENTERED */}
+        <div className="text-center">
+          <p className="text-xs md:text-sm text-gray-500">
+            &copy; 2025 Rookus. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

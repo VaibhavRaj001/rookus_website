@@ -3,8 +3,8 @@ import { Database } from "lucide-react";
 
 export const BentoCards = () => {
   return (
-    <section className="w-full bg-black text-white py-16 px-6 flex flex-col items-center relative z-20">
-      <h2 className="text-2xl md:text-3xl font-semibold text-center max-w-2xl mx-auto mb-12">
+    <section className="w-full bg-black text-white py-4 md:py-16 px-6 flex flex-col items-center relative z-20">
+      <h2 className="text-2xl md:text-3xl font-semibold text-center max-w-2xl mx-auto mb-8">
         Power your campaigns with a state of the art SuperIntelligence automation stack
       </h2>
 

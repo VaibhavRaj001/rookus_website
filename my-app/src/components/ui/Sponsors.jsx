@@ -9,7 +9,7 @@ export default function Sponsors() {
   ];
 
   return (
-    <section className="w-screen bg-black py-8 z-10">
+    <section className="w-screen bg-black py-4 md:py-8 z-10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-sm sm:text-base text-gray-400 mb-6 text-center">
           Supported by the best mentors and leaders from
