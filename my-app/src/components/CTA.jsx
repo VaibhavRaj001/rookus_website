@@ -71,8 +71,8 @@ const CTA = () => {
             {/* Stats row - horizontal scroll on mobile, aligned top on desktop */}
             <div className="flex w-full items-stretch gap-6 overflow-x-auto pb-2 md:justify-center md:overflow-visible lg:justify-end lg:pb-0">
               <div className="min-w-[200px] flex-1 rounded-xl border border-gray-800/50 bg-gray-900/40 p-6 text-left backdrop-blur-sm lg:max-w-[220px]">
-                <div className="text-3xl font-bold text-white md:text-4xl">10k+</div>
-                <p className="mt-2 text-sm text-gray-400">Active Users</p>
+                <div className="text-3xl font-bold text-white md:text-4xl">20+</div>
+                <p className="mt-2 text-sm text-gray-400">Campaign Templates</p>
               </div>
               <div className="min-w-[200px] flex-1 rounded-xl border border-gray-800/50 bg-gray-900/40 p-6 text-left backdrop-blur-sm lg:max-w-[220px]">
                 <div className="text-3xl font-bold text-white md:text-4xl">95%</div>

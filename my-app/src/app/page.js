@@ -82,10 +82,16 @@ export default function Home() {
 
   const metrics = [
     {
-      label: "Campaigns Optimized",
-      value: "248",
-      helper: "+32% QoQ",
-      detail: "Live across retail, fintech and DTC",
+      label: "Data Sources and COnncetors",
+      value: "20+",
+      helper: "and growing",
+      detail: "Seamless integrations with your existing tools",
+    },
+    {
+      label: "Automation Pipelines",
+      value: "100+",
+      helper: "pre-built",
+      detail: "Ready-to-deploy workflows for common marketing tasks",
     },
     {
       label: "Average Lift",
