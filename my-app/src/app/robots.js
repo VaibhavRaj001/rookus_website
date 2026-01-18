@@ -8,6 +8,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://rookus.co.in/sitemap.xml",
+    sitemap: "https://rookus.co.in/sitemap-index.xml",
   };
 }
