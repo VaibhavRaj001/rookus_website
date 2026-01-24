@@ -6,7 +6,7 @@ export const metadata = {
   metadataBase: new URL("https://rookus.co.in"),
 
   title: {
-    default: "Rookus – AI Design Automation Platform",
+    default: "Rookus – AI Campaign Automation Platform",
     template: "%s | Rookus",
   },
 
