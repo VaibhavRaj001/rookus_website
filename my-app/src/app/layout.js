@@ -11,10 +11,16 @@ export const metadata = {
   },
 
   description:
-    "Rookus uses AI to generate designs, automate workflows, and boost your brand’s creativity.",
+    "Rookus uses AI to generate Campaigns, automate workflows, and boost your brand’s creativity.",
 
   keywords: [
     "AI design automation",
+    "AI marketing platform",
+    "AI content generation",
+    "AI campaign management",
+    "AI-powered branding",
+    "automated marketing tools",
+    "creative AI solutions",
     "AI branding platform",
     "AI creative tools",
     "design automation software",
@@ -25,9 +31,9 @@ export const metadata = {
   creator: "Rookus",
 
   openGraph: {
-    title: "Rookus – AI Design Automation Platform",
+    title: "Rookus – AI Campaign Automation Platform",
     description:
-      "Rookus uses AI to generate designs, automate workflows, and boost your brand’s creativity.",
+      "Rookus uses AI to generate Campaigns, automate workflows, and boost your brand’s creativity.",
     url: "https://rookus.co.in",
     siteName: "Rookus",
     images: [
@@ -35,7 +41,7 @@ export const metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Rookus AI Design Automation Platform",
+        alt: "Rookus AI Campaign Automation Platform",
       },
     ],
     locale: "en_IN",
@@ -44,9 +50,9 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Rookus – AI Design Automation Platform",
+    title: "Rookus – AI Campaign Automation Platform",
     description:
-      "Rookus uses AI to generate designs, automate workflows, and boost your brand’s creativity.",
+      "Rookus uses AI to generate Campaigns, automate workflows, and boost your brand’s creativity.",
     images: ["/og-image.png"],
   },
 
